@@ -1,5 +1,5 @@
 
-# Woocommerce Cording Standard Check
+# Woocommerce #Coding Standard Check
 
 This blog is about to make your WordPress/Woocommerce plugin with Woocommerce,Woocommerce-Core,WordPress,WordPress-Core,PHPcs, PHPcf Standard.
 
