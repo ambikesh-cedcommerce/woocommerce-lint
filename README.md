@@ -37,6 +37,13 @@ Now if you only want to see the error not notice/warning then you have to use th
 ```bash
   ./vendor/bin/phpcs --warning-severity=0 --ignore-annotations --extensions=php,html --standard=Woocommerce-core {Your-project-file-name}
 ```
+
+If you want to generate errors of the file with the following above coammnad then try use this command to get error generated file 
+
+```bash
+    ./vendor/bin/phpcs --warning-severity=0 --ignore-annotations --extensions=php,html --standard=phpcs.xml --report-file={Where you want to generate files with Errors } { The targeted file on which you want PHPcs report }
+
+```
 ## Authors
 
 - [@ambikesh-cedcommerce](https://www.github.com/ambikesh-cedcommerce)
