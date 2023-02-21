@@ -41,7 +41,7 @@ Now if you only want to see the error not notice/warning then you have to use th
 If you want to generate errors of the file with the following above coammnad then try use this command to get error generated file 
 
 ```bash
-    ./vendor/bin/phpcs --warning-severity=0 --ignore-annotations --extensions=php,html --standard=phpcs.xml --report-file={Where you want to generate files with Errors } { The targeted file on which you want PHPcs report }
+    ./vendor/bin/phpcs --warning-severity=0 --ignore-annotations --extensions=php,html --standard=Woocommerce-core,Woocommerce,WordPress,WordPress-core --report-file={Where you want to generate files with Errors } { The targeted file on which you want PHPcs report }
 
 ```
 ## Authors
