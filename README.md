@@ -31,6 +31,12 @@ You will need to run following commands to check for the phpcs accroding to wooc
   ./vendor/bin/phpcs --standard=WordPress-core {Your-project-file-name}
 ```
 
+Correct code | ( Indent the code lines and function ) you can use below commands 
+
+```bash
+    ./vendor/bin/phpcbf --standard=Woocommerce-core {plugin-path-or-dir-path}
+
+```
 This above command will show you the Error,Warnning,Notice etc for PHPcs,
 Now if you only want to see the error not notice/warning then you have to use this below commands.
 
