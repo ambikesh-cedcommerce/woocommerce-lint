@@ -1,64 +1,57 @@
+# WooCommerce Coding Standard Check
 
-# Woocommerce #Coding Standard Check
-
-This blog is about to make your WordPress/Woocommerce plugin with Woocommerce,Woocommerce-Core,WordPress,WordPress-Core,PHPcs, PHPcf Standard.
-
+This repository focuses on ensuring your WordPress/WooCommerce plugin complies with WooCommerce, WooCommerce-Core, WordPress, WordPress-Core, PHPcs, and PHPcf standards.
 
 ## Documentation
-Now you'll see here.
 
-[Woocommerce PHP Link Documentation](https://developer.woocommerce.com/testing-extensions-and-maintaining-quality-code/setting-up-linting/)
+Find detailed documentation on WooCommerce PHP linting [here](https://developer.woocommerce.com/testing-extensions-and-maintaining-quality-code/setting-up-linting/).
 
+## Installation with Composer
 
-## Installation of Composer
-
-Before requiring [composer](https://getcomposer.org/doc/00-intro.md) in your project you must have [installed](https://getcomposer.org/doc/00-intro.md) the composer globally
-|| To Install composer in the project folder to run for the PHPcs
+Before requiring [Composer](https://getcomposer.org/doc/00-intro.md) in your project, ensure you have it [installed globally](https://getcomposer.org/doc/00-intro.md). To install Composer in your project folder for PHPcs, run:
 
 ```bash
-  cd my-project
-  composer require woocommerce/woocommerce-sniffs
-```
-    
-## After once you installed the composer in you local project
+cd my-project
+composer require woocommerce/woocommerce-sniffs
+After Composer is installed in your local project, use the following commands to check PHPcs according to WooCommerce core:
 
-You will need to run following commands to check for the phpcs accroding to woocommerce core
+bash
 
-```bash
-  ./vendor/bin/phpcs --standard=Woocommerce {Your-project-file-name}
-  ./vendor/bin/phpcs --standard=Woocommerce-core {Your-project-file-name}
-  ./vendor/bin/phpcs --standard=WordPress {Your-project-file-name}
-  ./vendor/bin/phpcs --standard=WordPress-core {Your-project-file-name}
-```
+./vendor/bin/phpcs --standard=WooCommerce {Your-project-file-name}
+./vendor/bin/phpcs --standard=WooCommerce-core {Your-project-file-name}
+./vendor/bin/phpcs --standard=WordPress {Your-project-file-name}
+./vendor/bin/phpcs --standard=WordPress-core {Your-project-file-name}
+Correct your code by indenting lines and functions using:
 
-Correct code | ( Indent the code lines and function ) you can use below commands 
+bash
 
-```bash
-    ./vendor/bin/phpcbf --standard=Woocommerce-core {plugin-path-or-dir-path}
+./vendor/bin/phpcbf --standard=WooCommerce-core {plugin-path-or-dir-path}
+To see only errors (notices/warnings), use:
 
-```
-This above command will show you the Error,Warnning,Notice etc for PHPcs,
-Now if you only want to see the error not notice/warning then you have to use this below commands.
+bash
 
-```bash
-  ./vendor/bin/phpcs --warning-severity=0 --ignore-annotations --extensions=php,html --standard=Woocommerce-core {Your-project-file-name}
-```
+./vendor/bin/phpcs --warning-severity=0 --ignore-annotations --extensions=php,html --standard=WooCommerce-core {Your-project-file-name}
+Generate error files with:
 
-If you want to generate errors of the file with the following above coammnad then try use this command to get error generated file 
+bash
 
-```bash
-    ./vendor/bin/phpcs --warning-severity=0 --ignore-annotations --extensions=php,html --standard=Woocommerce-core,Woocommerce,WordPress,WordPress-core --report-file={Where you want to generate files with Errors } { The targeted file on which you want PHPcs report }
+./vendor/bin/phpcs --warning-severity=0 --ignore-annotations --extensions=php,html --standard=WooCommerce-core,WooCommerce,WordPress,WordPress-core --report-file={Error-file-location} {Targeted-file-for-Phpcs-report}
+WooCommerce Linter Testing Tip
+Products on the WooCommerce Marketplace adhere to WooCommerce linter rules. Test your product before submitting it for Marketplace consideration:
 
-```
-## Authors
+Install PHP and Composer on your computer or in a Docker environment.
+Inside wp-content, install woocommerce-sniffs with composer install woocommerce/woocommerce-sniffs.
+Add a file named pbs-rules-set.xml with this content.
+Inside wp-content, run the following (replace "productname" with your product's directory):
+bash
 
-- [@ambikesh-cedcommerce](https://www.github.com/ambikesh-cedcommerce)
+php ./vendor/bin/phpcs --standard=pbs-rules-set.xml --warning-severity=0 --report-source --report-full=phpcs-report.txt --ignore-annotations --extensions=php,html themes/themename
+The report will be created in a file called phpcs-report.txt.
+
+Authors
+@ambikesh-cedcommerce
+Contributing
+Contributions are always welcome! See contributing.md for ways to get started. Please adhere to this project's code of conduct. If there is anything missing or you want to add more, we would appreciate it. Thank you!
 
 
-## Contributing
-
-Contributions are always welcome!
-
-See `contributing.md` for ways to get started.
-
-Please adhere to this project's `code of conduct`. If there is anything missing or you can to add more I would love that thanks.
+Make sure to replace the placeholder link in the `pbs-rules-set.xml` section with the actual content or link you want to provide for that file.
